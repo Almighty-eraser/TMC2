@@ -29,9 +29,9 @@ void UI::PrintAllNode(void) const
 	{
 		if (Print->pNext != nullptr)
 		{
-			std::cout << '\n' << "이름 : " << Print->pNext->GetName() 
-				<< '\n' << "전화번호 : " << Print->pNext->GetPhone()
-				<< '\n' << "주소 : " << Print->pNext->GetAddress() 
+			std::cout << '\n' << "Name : " << Print->pNext->GetName() 
+				<< '\n' << "Phone number : " << Print->pNext->GetPhone()
+				<< '\n' << "Address : " << Print->pNext->GetAddress() 
 				<< '\n';
 			Print = Print->pNext;
 		}
@@ -46,7 +46,7 @@ void UI::DeleteAllNode(void) const
 	int choice = 0;
 	while (1)
 	{
-		std::cout << "\n\n정말로 모든 데이터의 내용을 지우시겠습니까? <1> 예 <2>아니오 : ";
+		std::cout << "\n\nAre you sure you wanna delete all data? <1> yes <2>no : ";
 		std::cin >> choice;
 
 		if (choice == 1)
@@ -55,10 +55,10 @@ void UI::DeleteAllNode(void) const
 			break;
 		else
 		{
-			std::cout << "\n\n다시 입력해 주세요\n";
+			std::cout << "\n\nTry Again\n";
 			continue;
 		}
-		std::cout << "\n\n모든 데이터를 지웠습니다. Exit을 고르시면 파일 안의 내용이 사라집니다.\n\n";
+		std::cout << "\n\nAll data deleted. If you choose EXIT, All data in File will be deleted\n\n";
 		break;
 	}
 } 
@@ -70,7 +70,7 @@ void UI::DeleteNode(void) const
 
 	while (1)
 	{
-		std::cout << "\n\n삭제할 데이터를 검색할 영역 <1>이름 <2>전화번호 <3>주소 ";
+		std::cout << "\n\nChoose Area to delete <1>Name <2>Phone number <3>Address ";
 		std::cin >> side;
 
 		if (side == 1)
@@ -81,13 +81,13 @@ void UI::DeleteNode(void) const
 			input = new char[64];
 		else
 		{
-			std::cout << "\n\n다시 입력해 주세요\n\n";
+			std::cout << "\n\nTry Again\n\n";
 			continue;
 		}
 
 		memset(input, 0, sizeof(input));
 
-		std::cout << "\n\n검색어 : ";
+		std::cout << "\n\nSearch : ";
 		std::cin >> input;
 
 		Node* Result = UI_main->SearchNode(side, input);
@@ -99,12 +99,12 @@ void UI::DeleteNode(void) const
 		{
 			if (Print->pNext == nullptr)
 			{
-				std::cout << "\n\n더이상 일치하는 데이터가 없습니다.\n\n";
+				std::cout << "\n\nNo more data searched\n\n";
 				break;
 			}
 
 
-			std::cout << "찾은 데이터 : ";
+			std::cout << "Found Data : ";
 			std::cout << Print->pNext->GetName() << ' ' << Print->pNext->GetPhone() << ' ' << Print->pNext->GetAddress() << " <" << counter <<
 				'>' << '\n';
 			++counter;
@@ -115,7 +115,7 @@ void UI::DeleteNode(void) const
 
 		int choice = 0;
 
-		std::cout << "\n\n\n검색한 데이터들 중 삭제할 데이터를 고르시오 : ";
+		std::cout << "\n\n\nChoose data to delete : ";
 		std::cin >> choice;
 
 		Node* ChosenNode;
@@ -156,7 +156,7 @@ void UI::Search(void) const
 
 	while (1)
 	{
-		std::cout << "\n\n검색할 영역 <1>이름 <2>전화번호 <3>주소 ";
+		std::cout << "\n\nChoose Area to search <1>Name <2>Phone number <3>Address ";
 		std::cin >> side;
 
 		if (side == 1)
@@ -167,13 +167,13 @@ void UI::Search(void) const
 			input = new char[64];
 		else
 		{
-			std::cout << "\n\n다시 입력해 주세요\n\n";
+			std::cout << "\n\nTry Again\n\n";
 			continue;
 		}
 
 		memset(input, 0, sizeof(input));
 
-		std::cout << "\n\n검색어 : ";
+		std::cout << "\n\nSearch : ";
 		std::cin >> input;
 
 		Node* Result = UI_main->SearchNode(side, input);
@@ -183,12 +183,12 @@ void UI::Search(void) const
 		{
 			if (Print->pNext == nullptr)
 			{
-				std::cout << "\n\n더이상 일치하는 데이터가 없습니다.\n\n";
+				std::cout << "\n\nNo more data searched\n\n";
 				break;
 			}
 
 
-			std::cout << "찾은 데이터 : ";
+			std::cout << "Found Data : ";
 			std::cout << Print->pNext->GetName() << ' ' << Print->pNext->GetPhone() << ' ' << Print->pNext->GetAddress() << '\n';
 
 			Print = Print->pNext;
@@ -225,7 +225,7 @@ void UI::choosemenu(void) const
 	{
 		fflush(stdin);
 		std::cout << '\n' << '\n';
-		std::cout << "\t\tWelcome to TMC2                                       파일 이름과 경로 : ""d:DATA.dat""" << '\n';
+		std::cout << "\t\tWelcome to TMC2                                       File name and Path : ""d:DATA.dat""" << '\n';
 		std::cout << "" << '\n';
 		std::cout << "\t\t<1> Add New Data" << '\n';
 		std::cout << "\t\t<2> Print All Data" << '\n';

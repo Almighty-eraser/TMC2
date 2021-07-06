@@ -26,7 +26,7 @@ List::List(Node *Head)
 		
 		if (fread(&Read, sizeof(char) * (9 + 12 + 64), 1, fp))
 		{
-			std::cout << "파일 읽어들이는 중.." << '\n';
+			std::cout << "Reading File.." << '\n';
 			AddNode(Read.GetName(), Read.GetPhone(), Read.GetAddress());
 		}
 		else
@@ -81,7 +81,7 @@ Node* List::SearchNode(int side, char* Find) const
 
 
 
-	if (side == 1)//이름 검색
+	if (side == 1)//searching name
 	{
 		while (nNode != nullptr)
 		{
@@ -107,7 +107,7 @@ Node* List::SearchNode(int side, char* Find) const
 		return FoundData;
 
 	}
-	else if (side == 2)//전화번호 검색
+	else if (side == 2)//searching phone number
 	{
 		while (nNode != nullptr)
 		{
@@ -132,7 +132,7 @@ Node* List::SearchNode(int side, char* Find) const
 
 		return FoundData;
 	}
-	else if (side == 3)//주소 검색
+	else if (side == 3)//searching address
 	{
 		while (nNode != nullptr)
 		{
