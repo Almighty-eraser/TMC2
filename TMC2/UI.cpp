@@ -225,7 +225,7 @@ void UI::choosemenu(void) const
 	{
 		fflush(stdin);
 		std::cout << '\n' << '\n';
-		std::cout << "\t\tWelcome to TMC2                                       File name and Path : ""d:DATA.dat""" << '\n';
+		std::cout << "\t\tWelcome to KoreanDatabase                                       File name and Path : ""d:DATA.dat""" << '\n';
 		std::cout << "" << '\n';
 		std::cout << "\t\t<1> Add New Data" << '\n';
 		std::cout << "\t\t<2> Print All Data" << '\n';
