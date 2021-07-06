@@ -235,7 +235,7 @@ void UI::choosemenu(void) const
 		std::cout << "\t\t<6> Randomly Create Data" << '\n';
 		std::cout << "\t\t<7> Exit" << '\n';
 		std::cout << "" << '\n';
-		std::cout << "\t\tÀÔ·Â : ";
+		std::cout << "\t\tInput : ";
 
 
 		std::cin >> answer;
